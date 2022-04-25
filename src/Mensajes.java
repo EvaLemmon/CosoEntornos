@@ -1,12 +1,31 @@
 import java.util.Objects;
 
 public class Mensajes {
-	private Usuario dueñoMensaje;
+	private Usuario dueï¿½oMensaje;
 	private Usuario destinatarioMensaje;
 	
-	public Mensajes(Usuario dueñoMensaje, Usuario destinatarioMensaje) {
+	public Mensajes(Usuario dueï¿½oMensaje, Usuario destinatarioMensaje) {
 		super();
-		this.dueñoMensaje = dueñoMensaje;
+		this.dueï¿½oMensaje = dueï¿½oMensaje;
 		this.destinatarioMensaje = destinatarioMensaje;
 	}
+	
+	public String getDueï¿½oMensaje() {
+		return dueï¿½oMensaje;
+	}
+
+	public void setDueï¿½oMensaje(String dueï¿½oMensaje) {
+		this.dueï¿½oMensaje = dueï¿½oMensaje;
+	}
+
+	public String getDestinatarioMensaje() {
+		return destinatarioMensaje;
+	}
+
+	public void setDestinatarioMensaje(String destinatarioMensaje) {
+		this.destinatarioMensaje = destinatarioMensaje;
+	}
+
+	private String dueï¿½oMensaje;
+	private String destinatarioMensaje;
 }
