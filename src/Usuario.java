@@ -7,8 +7,7 @@ public class Usuario {
 	
 	//Atributos
 	String szNumTelefono;
-	
-	
+
 	ArrayList<Mensajes> loMensajesRecibidos;
 	ArrayList<String> lszRemitenteMensajes;
 	
@@ -49,4 +48,51 @@ public class Usuario {
 		return szMensaje;
 	}
 	
+	public String getSzNumTelefono() {
+		return szNumTelefono;
+	}
+
+	public void setSzNumTelefono(String szNumTelefono) {
+		this.szNumTelefono = szNumTelefono;
+	}
+
+	public ArrayList<Mensajes> getLoMensajesRecibidos() {
+		return loMensajesRecibidos;
+	}
+
+	public void setLoMensajesRecibidos(ArrayList<Mensajes> loMensajesRecibidos) {
+		this.loMensajesRecibidos = loMensajesRecibidos;
+	}
+
+	public ArrayList<String> getLszRemitenteMensajes() {
+		return lszRemitenteMensajes;
+	}
+
+	public void setLszRemitenteMensajes(ArrayList<String> lszRemitenteMensajes) {
+		this.lszRemitenteMensajes = lszRemitenteMensajes;
+	}
+
+	public ArrayList<Mensajes> getLoMensajesEnviados() {
+		return loMensajesEnviados;
+	}
+
+	public void setLoMensajesEnviados(ArrayList<Mensajes> loMensajesEnviados) {
+		this.loMensajesEnviados = loMensajesEnviados;
+	}
+
+	public ArrayList<String> getLszDestinatarioMensajes() {
+		return lszDestinatarioMensajes;
+	}
+
+	public void setLszDestinatarioMensajes(ArrayList<String> lszDestinatarioMensajes) {
+		this.lszDestinatarioMensajes = lszDestinatarioMensajes;
+	}
+
+	public ArrayList<Usuario> getLoContactos() {
+		return loContactos;
+	}
+
+	public void setLoContactos(ArrayList<Usuario> loContactos) {
+		this.loContactos = loContactos;
+	}
 }
