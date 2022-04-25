@@ -118,7 +118,7 @@ public class Usuario {
 						System.out.println("Mensaje: ");
 						String szMensaje = sc.nextLine();
 						
-						//Texto oTexto = new Texto(this, oDestinatario, szMensaje);
+						Texto oTexto = new Texto(this, oDestinatario, szMensaje);
 						
 					} 
 					if(iOpcion == 2)			
