@@ -1,18 +1,21 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Random;
 
 public class Usuario {
 
 	Scanner sc = new Scanner(System.in);
+	Random rnd = new Random();
 
 	//Atributos
 	String szNumTelefono;
 
 	ArrayList<Mensajes> loMensajesRecibidos;
-	ArrayList<String> lszRemitenteMensajes;
+	ArrayList<Usuario> loRemitenteMensajes;
 	
 	ArrayList<Mensajes> loMensajesEnviados;
-	ArrayList<String> lszDestinatarioMensajes;
+	ArrayList<Usuario> loDestinatarioMensajes;
+	
 	ArrayList<Usuario> loContactos;
 	
 	//Constructor
@@ -21,9 +24,9 @@ public class Usuario {
 		this.szNumTelefono = szNumTelefono;
 		
 		loMensajesRecibidos = new ArrayList<Mensajes>();
-		lszRemitenteMensajes = new ArrayList<String>();
+		loRemitenteMensajes = new ArrayList<Usuario>();
 		loMensajesEnviados = new ArrayList<Mensajes>();
-		lszDestinatarioMensajes = new ArrayList<String>();
+		loDestinatarioMensajes = new ArrayList<Usuario>();
 		loContactos = new ArrayList<Usuario>();
 	}
 	
@@ -44,12 +47,12 @@ public class Usuario {
 		this.loMensajesRecibidos = loMensajesRecibidos;
 	}
 
-	public ArrayList<String> getLszRemitenteMensajes() {
-		return lszRemitenteMensajes;
+	public ArrayList<Usuario> getLoRemitenteMensajes() {
+		return loRemitenteMensajes;
 	}
 
-	public void setLszRemitenteMensajes(ArrayList<String> lszRemitenteMensajes) {
-		this.lszRemitenteMensajes = lszRemitenteMensajes;
+	public void setLoRemitenteMensajes(ArrayList<Usuario> lszRemitenteMensajes) {
+		this.loRemitenteMensajes = lszRemitenteMensajes;
 	}
 
 	public ArrayList<Mensajes> getLoMensajesEnviados() {
@@ -60,12 +63,12 @@ public class Usuario {
 		this.loMensajesEnviados = loMensajesEnviados;
 	}
 
-	public ArrayList<String> getLszDestinatarioMensajes() {
-		return lszDestinatarioMensajes;
+	public ArrayList<Usuario> getLoDestinatarioMensajes() {
+		return loDestinatarioMensajes;
 	}
 
-	public void setLszDestinatarioMensajes(ArrayList<String> lszDestinatarioMensajes) {
-		this.lszDestinatarioMensajes = lszDestinatarioMensajes;
+	public void setLoDestinatarioMensajes(ArrayList<Usuario> lszDestinatarioMensajes) {
+		this.loDestinatarioMensajes = lszDestinatarioMensajes;
 	}
 
 	public ArrayList<Usuario> getLoContactos() {
@@ -77,24 +80,23 @@ public class Usuario {
 	}
 	
 	//Metodos
-	public String pszEnviarMensaje(Aplicacion oAplicacion)
+	public void pvEnviarMensaje(Aplicacion oAplicacion)
 	{
 		int iOpcion = 0;
 		boolean bSalir = false;
 		boolean bCoincide = false;
-		
-		String szDestinatario;
-		
-		Usuario oDestinatario;
+	
+		Usuario oDestinatario = null;
+		String szTelefono;
 		
 		while(!bSalir)
 		{
 			System.out.println("A quíen quiere inviar un mensaje (teléfono)");
-			szDestinatario = sc.nextLine();
+			szTelefono = sc.nextLine();
 			
 			for(int iCont = 0; iCont < oAplicacion.getLoUsuarios().size(); iCont++)
 			{
-				if(oAplicacion.getLoUsuarios().get(iCont).getSzNumTelefono().equals(szDestinatario))
+				if(oAplicacion.getLoUsuarios().get(iCont).getSzNumTelefono().equals(szTelefono))
 				{
 					oDestinatario = oAplicacion.getLoUsuarios().get(iCont);
 					bCoincide = true;
@@ -117,33 +119,33 @@ public class Usuario {
 					{
 						System.out.println("Mensaje: ");
 						String szMensaje = sc.nextLine();
-						
+					
 						Texto oTexto = new Texto(this, oDestinatario, szMensaje);
+						
+						loMensajesEnviados.add(oTexto); 
+						loDestinatarioMensajes.add(oDestinatario);
+						
+						oDestinatario.getLoMensajesRecibidos().add(oTexto);
+						oDestinatario.getLoRemitenteMensajes().add(this);
 						
 					} 
 					if(iOpcion == 2)			
 					{
-						System.out.println("Mensaje: ");
+						System.out.println("Ruta Imagen: ");
+						String szRuta = sc.nextLine();
+					
+						int iTamanyo = (int) (rnd.nextDouble() * 5000);
+						
+						Imagen oImagen = new Imagen(this, oDestinatario, szRuta, iTamanyo);
+						
+						loMensajesEnviados.add(oImagen); 
+						loDestinatarioMensajes.add(oDestinatario);
+						
+						oDestinatario.getLoMensajesRecibidos().add(oImagen);
+						oDestinatario.getLoRemitenteMensajes().add(this);
 					}
 				}
 			}
-			
-			/*szMensaje = sc.nextLine();
-			
-			loMensajeEnviados.add()
-			oDestinatario.pszRecibirMensaje(szMensaje);
-			return szMensaje;*/
 		}
-	}
-	
-	public String pszRecibirMensaje(String szMensaje)
-	{
-		//String szMensaje;
-		
-		System.out.println("Mensaje: ");
-		szMensaje = sc.nextLine();
-		
-		return szMensaje;
-	}
-	
+	}	
 }
