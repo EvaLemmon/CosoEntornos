@@ -1,10 +1,10 @@
 import java.util.Objects;
 
 public class Mensajes {
-	private String dueñoMensaje;
-	private String destinatarioMensaje;
+	private Usuario dueñoMensaje;
+	private Usuario destinatarioMensaje;
 	
-	public Mensajes(String dueñoMensaje, String destinatarioMensaje) {
+	public Mensajes(Usuario dueñoMensaje, Usuario destinatarioMensaje) {
 		super();
 		this.dueñoMensaje = dueñoMensaje;
 		this.destinatarioMensaje = destinatarioMensaje;

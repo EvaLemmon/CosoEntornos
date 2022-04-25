@@ -3,7 +3,7 @@ public class Texto extends Mensajes{
 
 	private String texto;
 
-	public Texto(String dueñoMensaje, String destinatarioMensaje, String texto) {
+	public Texto(Usuario dueñoMensaje, Usuario destinatarioMensaje, String texto) {
 		super(dueñoMensaje, destinatarioMensaje);
 		this.texto = texto;
 	}
