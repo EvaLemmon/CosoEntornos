@@ -3,8 +3,8 @@ public class Imagen extends Mensajes{
 	private String ruta;
 	private int tamaño;
 	
-	public Imagen(Usuario dueñoMensaje, Usuario destinatarioMensaje, String ruta, int tamaño) {
-		super(dueñoMensaje, destinatarioMensaje);
+	public Imagen(Usuario duenyoMensaje, Usuario destinatarioMensaje, String ruta, int tamaño) {
+		super(duenyoMensaje, destinatarioMensaje);
 		this.ruta = ruta;
 		this.tamaño = tamaño;
 	}

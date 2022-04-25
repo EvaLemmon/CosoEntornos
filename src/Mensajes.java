@@ -10,7 +10,7 @@ public class Mensajes {
 		this.destinatarioMensaje = destinatarioMensaje;
 	}
 	
-	public Usuario getDuenoMensaje() {
+	public Usuario getDuenyoMensaje() {
 		return duenyoMensaje;
 	}
 
