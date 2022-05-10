@@ -90,9 +90,17 @@ public class Usuario {
 		
 		while(!bSalir)
 		{
+<<<<<<< Updated upstream
 			System.out.println("A quíen quiere inviar un mensaje (teléfono)");
 			szDestinatario = sc.nextLine();
 			
+=======
+			System.out.print("A quíen quiere nviar un mensaje (teléfono): ");
+			szTelefono = sc.nextLine();
+			System.out.println();
+			
+			bCoincide = false;		
+>>>>>>> Stashed changes
 			for(int iCont = 0; iCont < oAplicacion.getLoUsuarios().size(); iCont++)
 			{
 				if(oAplicacion.getLoUsuarios().get(iCont).getSzNumTelefono().equals(szDestinatario))
@@ -101,6 +109,10 @@ public class Usuario {
 					bCoincide = true;
 				}
 			}
+<<<<<<< Updated upstream
+=======
+			System.out.println(bCoincide);
+>>>>>>> Stashed changes
 			if(bCoincide = false)
 			{
 				System.out.println("Usuario no encontrado");
