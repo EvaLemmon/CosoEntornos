@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Random;
+
 /**
 * Clase Usuario
 * Clase con todos los datos de un usuario.
@@ -9,7 +10,6 @@ import java.util.Random;
 * @param  szNumTelefono
 * @see Mensajes
 */
-
 
 public class Usuario {
 
@@ -92,30 +92,16 @@ public class Usuario {
 	public void pvEnviarMensaje(Aplicacion oAplicacion)
 	{
 		int iOpcion = 0;
-
-		boolean bSalir;
-		boolean bCoincide;
-
 		boolean bSalir = false;
 		boolean bCoincide = false;
 	
 		Usuario oDestinatario = null;
 		String szTelefono;
 		
-		bSalir = false;
 		while(!bSalir)
 		{
-			System.out.println("A qu√≠en quiere inviar un mensaje (tel√©fono)");
+			System.out.println("A quÌen quiere inviar un mensaje (telÈfono)");
 			szTelefono = sc.nextLine();
-
-			System.out.print("A qu√≠en quiere nviar un mensaje (tel√©fono)");
-			szTelefono = sc.nextLine();
-			System.out.println();
-			
-			bCoincide = false;
-
-			szTelefono = sc.nextLine();
-			String szDestinatario = sc.nextLine();
 
 			for(int iCont = 0; iCont < oAplicacion.getLoUsuarios().size(); iCont++)
 			{
@@ -125,7 +111,6 @@ public class Usuario {
 					bCoincide = true;
 				}
 			}
-
 			if(bCoincide = false)
 			{
 				System.out.println("Usuario no encontrado");
@@ -135,7 +120,8 @@ public class Usuario {
 			{
 				while(iOpcion < 1 || 2 < iOpcion)
 				{
-					System.out.println("¬øQu√© tipo de mensaje quieres enviar (1: Mensaje de texto. 2: Imagen)?");
+
+					System.out.println("øQuÈ tipo de mensaje quieres enviar (1: Mensaje de texto. 2: Imagen)?");
 					iOpcion = sc.nextInt();
 					sc.nextLine();
 					
@@ -145,10 +131,6 @@ public class Usuario {
 						String szMensaje = sc.nextLine();
 					
 						Texto oTexto = new Texto(this, oDestinatario, szMensaje);
-						
-						loMensajesEnviados.add(oTexto); 
-						loDestinatarioMensajes.add(oDestinatario);
-						
 						
 						loMensajesEnviados.add(oTexto); 
 						loDestinatarioMensajes.add(oDestinatario);
@@ -174,7 +156,7 @@ public class Usuario {
 					}
 					else
 					{
-						System.out.println("Elige una opci√≥n v√°lida");
+						System.out.println("Elige una opciÛn v·lida");
 					}
 				}
 			}

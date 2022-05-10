@@ -18,7 +18,7 @@ public class Aplicacion {
 	{
 		this.loUsuarios = loUsuarios;
 	}
-	
+
 	public ArrayList<Usuario> getLoUsuarios() {
 		return loUsuarios;
 	}

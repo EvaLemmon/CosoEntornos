@@ -1,5 +1,5 @@
-
 import java.util.ArrayList;
+
 /**
 * Clase Principal
 * Aqui se encuentra el main y el codigo necesario para ejecutar la aplicacion
@@ -9,12 +9,11 @@ import java.util.ArrayList;
 * @see Usuario
 */
 
-
 public class Principal {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-			
+		
 		Usuario user1 = new Usuario("123456789");
 		Usuario user2 = new Usuario("123456788");
 		
@@ -24,11 +23,6 @@ public class Principal {
 		
 		user1.pvEnviarMensaje(aplicacion);
 		System.out.println(user2.getLoMensajesRecibidos().get(0));
-		Usuario user1 = new Usuario("123456789");
-		Usuario user2 = new Usuario("123456788");
-		
-		user1.pszEnviarMensaje(user2);
-		user2.getLoMensajesRecibidos();
 	}
 
 }
