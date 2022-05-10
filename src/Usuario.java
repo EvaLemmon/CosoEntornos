@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Random;
-
 /**
 * Clase Usuario
 * Clase con todos los datos de un usuario.
@@ -10,6 +9,7 @@ import java.util.Random;
 * @param  szNumTelefono
 * @see Mensajes
 */
+
 
 public class Usuario {
 
@@ -92,15 +92,28 @@ public class Usuario {
 	public void pvEnviarMensaje(Aplicacion oAplicacion)
 	{
 		int iOpcion = 0;
+
+		boolean bSalir;
+		boolean bCoincide;
+
 		boolean bSalir = false;
 		boolean bCoincide = false;
 	
 		Usuario oDestinatario = null;
 		String szTelefono;
 		
+		bSalir = false;
 		while(!bSalir)
 		{
-			System.out.println("A qu�en quiere inviar un mensaje (tel�fono)");
+			System.out.println("A quíen quiere inviar un mensaje (teléfono)");
+			szTelefono = sc.nextLine();
+
+			System.out.print("A quíen quiere nviar un mensaje (teléfono)");
+			szTelefono = sc.nextLine();
+			System.out.println();
+			
+			bCoincide = false;
+
 			szTelefono = sc.nextLine();
 			String szDestinatario = sc.nextLine();
 
@@ -112,6 +125,7 @@ public class Usuario {
 					bCoincide = true;
 				}
 			}
+
 			if(bCoincide = false)
 			{
 				System.out.println("Usuario no encontrado");
@@ -121,7 +135,7 @@ public class Usuario {
 			{
 				while(iOpcion < 1 || 2 < iOpcion)
 				{
-					System.out.println("�Qu� tipo de mensaje quieres enviar (1: Mensaje de texto. 2: Imagen)?");
+					System.out.println("¿Qué tipo de mensaje quieres enviar (1: Mensaje de texto. 2: Imagen)?");
 					iOpcion = sc.nextInt();
 					sc.nextLine();
 					
@@ -135,11 +149,15 @@ public class Usuario {
 						loMensajesEnviados.add(oTexto); 
 						loDestinatarioMensajes.add(oDestinatario);
 						
+						
+						loMensajesEnviados.add(oTexto); 
+						loDestinatarioMensajes.add(oDestinatario);
+						
 						oDestinatario.getLoMensajesRecibidos().add(oTexto);
 						oDestinatario.getLoRemitenteMensajes().add(this);
 						
 					} 
-					if(iOpcion == 2)			
+					else if(iOpcion == 2)			
 					{
 						System.out.println("Ruta Imagen: ");
 						String szRuta = sc.nextLine();
@@ -153,6 +171,10 @@ public class Usuario {
 						
 						oDestinatario.getLoMensajesRecibidos().add(oImagen);
 						oDestinatario.getLoRemitenteMensajes().add(this);
+					}
+					else
+					{
+						System.out.println("Elige una opción válida");
 					}
 				}
 			}
