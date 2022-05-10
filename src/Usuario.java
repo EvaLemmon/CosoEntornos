@@ -2,6 +2,15 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Random;
 
+/**
+* Clase Usuario
+* Clase con todos los datos de un usuario.
+* @author Eva Lemmon Lopez y Adrian Cortes
+* @version 0.0.1
+* @param  szNumTelefono
+* @see Mensajes
+*/
+
 public class Usuario {
 
 	Scanner sc = new Scanner(System.in);
