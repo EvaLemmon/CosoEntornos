@@ -24,7 +24,11 @@ public class Principal {
 		Aplicacion aplicacion = new Aplicacion(loListaUsuarios);
 		
 		user1.pvEnviarMensaje(aplicacion);
-		System.out.println(user2.getLoMensajesRecibidos().get(0));
+		user1.pvEnviarMensaje(aplicacion);
+		user1.pvEnviarMensaje(aplicacion);
+		
+		user2.pvVerMensajesRecibidos();
+		user1.pvVerMensajesEnviados();
 	}
 
 }

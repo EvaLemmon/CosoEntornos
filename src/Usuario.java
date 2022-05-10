@@ -184,4 +184,54 @@ public class Usuario {
 			}
 		}
 	}	
+	
+	public void pvVerMensajesRecibidos()
+	{
+		for(int iCont = 0; iCont < loMensajesRecibidos.size(); iCont++)
+		{
+			if(loMensajesRecibidos.get(iCont) instanceof Texto)
+			{
+				Mensajes Aux = loMensajesRecibidos.get(iCont);
+				Texto Aux2  = (Texto)Aux;
+				
+				System.out.println("Mensaje " + (iCont+1) + ", De " + Aux2.getDuenyoMensaje().getSzNumTelefono() + ":");
+				System.out.println(Aux2.getTexto());
+				System.out.println();;
+			}
+			else
+			{
+				Mensajes Aux = loMensajesRecibidos.get(iCont);
+				Imagen Aux2  = (Imagen)Aux;
+				
+				System.out.println("Mensaje " + (iCont+1) + ", De " + Aux2.getDuenyoMensaje().getSzNumTelefono() + ":");
+				System.out.println("Imagen: " + Aux2.getRuta());
+				System.out.println();
+			}
+		}
+	}
+	
+	public void pvVerMensajesEnviados()
+	{
+		for(int iCont = 0; iCont < loMensajesEnviados.size(); iCont++)
+		{
+			if(loMensajesEnviados.get(iCont) instanceof Texto)
+			{
+				Mensajes Aux = loMensajesEnviados.get(iCont);
+				Texto Aux2  = (Texto)Aux;
+				
+				System.out.println("Mensaje " + (iCont+1) + ", Enviado a " + Aux2.getDestinatarioMensaje().getSzNumTelefono() + ":");
+				System.out.println(Aux2.getTexto());
+				System.out.println();
+			}
+			else
+			{
+				Mensajes Aux = loMensajesEnviados.get(iCont);
+				Imagen Aux2  = (Imagen)Aux;
+				
+				System.out.println("Mensaje " + (iCont+1) + ", Enviado a " + Aux2.getDestinatarioMensaje().getSzNumTelefono() + ":");
+				System.out.println("Imagen: " + Aux2.getRuta());
+				System.out.println();
+			}
+		}
+	}
 }

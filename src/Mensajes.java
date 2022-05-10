@@ -1,4 +1,3 @@
-import java.util.Objects;
 //clases, atributos y metodos
 /**
 * Clase Mensajes
@@ -10,29 +9,34 @@ import java.util.Objects;
 * @see Usuario
 */
 
-public class Mensajes {
+public class Mensajes 
+{
 	private Usuario duenyoMensaje;
 	private Usuario destinatarioMensaje;
 	
-	public Mensajes(Usuario duenyoMensaje, Usuario destinatarioMensaje) {
-		super();
+	public Mensajes(Usuario duenyoMensaje, Usuario destinatarioMensaje) 
+	{
 		this.duenyoMensaje = duenyoMensaje;
 		this.destinatarioMensaje = destinatarioMensaje;
 	}
 	
-	public Usuario getDuenyoMensaje() {
+	public Usuario getDuenyoMensaje()
+	{
 		return duenyoMensaje;
 	}
 
-	public void setDuenyoMensaje(Usuario duenyoMensaje) {
+	public void setDuenyoMensaje(Usuario duenyoMensaje)
+	{
 		this.duenyoMensaje = duenyoMensaje;
 	}
 
-	public Usuario getDestinatarioMensaje() {
+	public Usuario getDestinatarioMensaje()
+	{
 		return destinatarioMensaje;
 	}
 
-	public void setDestinatarioMensaje(Usuario destinatarioMensaje) {
+	public void setDestinatarioMensaje(Usuario destinatarioMensaje) 
+	{
 		this.destinatarioMensaje = destinatarioMensaje;
 	}
 }
