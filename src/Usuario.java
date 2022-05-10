@@ -1,6 +1,15 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Random;
+/**
+* Clase Usuario
+* Clase con todos los datos de un usuario.
+* @author Eva Lemmon Lopez y Adrian Cortes
+* @version 0.0.1
+* @param  szNumTelefono
+* @see Mensajes
+*/
+
 
 public class Usuario {
 
@@ -83,8 +92,12 @@ public class Usuario {
 	public void pvEnviarMensaje(Aplicacion oAplicacion)
 	{
 		int iOpcion = 0;
+
 		boolean bSalir;
 		boolean bCoincide;
+
+		boolean bSalir = false;
+		boolean bCoincide = false;
 	
 		Usuario oDestinatario = null;
 		String szTelefono;
@@ -92,14 +105,18 @@ public class Usuario {
 		bSalir = false;
 		while(!bSalir)
 		{
-			System.out.println("A quíen quiere inviar un mensaje (teléfono)");
+			System.out.println("A quÃ­en quiere inviar un mensaje (telÃ©fono)");
 			szTelefono = sc.nextLine();
 
-			System.out.print("A quíen quiere nviar un mensaje (teléfono)");
+			System.out.print("A quÃ­en quiere nviar un mensaje (telÃ©fono)");
 			szTelefono = sc.nextLine();
 			System.out.println();
 			
 			bCoincide = false;
+
+			szTelefono = sc.nextLine();
+			String szDestinatario = sc.nextLine();
+
 			for(int iCont = 0; iCont < oAplicacion.getLoUsuarios().size(); iCont++)
 			{
 				if(oAplicacion.getLoUsuarios().get(iCont).getSzNumTelefono().equals(szTelefono))
@@ -118,7 +135,7 @@ public class Usuario {
 			{
 				while(iOpcion < 1 || 2 < iOpcion)
 				{
-					System.out.println("¿Qué tipo de mensaje quieres enviar (1: Mensaje de texto. 2: Imagen)?");
+					System.out.println("Â¿QuÃ© tipo de mensaje quieres enviar (1: Mensaje de texto. 2: Imagen)?");
 					iOpcion = sc.nextInt();
 					sc.nextLine();
 					
@@ -128,6 +145,10 @@ public class Usuario {
 						String szMensaje = sc.nextLine();
 					
 						Texto oTexto = new Texto(this, oDestinatario, szMensaje);
+						
+						loMensajesEnviados.add(oTexto); 
+						loDestinatarioMensajes.add(oDestinatario);
+						
 						
 						loMensajesEnviados.add(oTexto); 
 						loDestinatarioMensajes.add(oDestinatario);
@@ -153,7 +174,7 @@ public class Usuario {
 					}
 					else
 					{
-						System.out.println("Elige una opción válida");
+						System.out.println("Elige una opciÃ³n vÃ¡lida");
 					}
 				}
 			}

@@ -1,4 +1,14 @@
 import java.util.Objects;
+//clases, atributos y metodos
+/**
+* Clase Mensajes
+* Contiene los parametros para identificar mensajeros
+* @author Eva Lemmon Lopez y Adrian Cortes
+* @version 0.0.1
+* @param  duenyoMensaje Identificacion de quien manda el mensaje.
+* @param  destinatarioMensaje Identificacion de quien recibe el mensaje.
+* @see Usuario
+*/
 
 public class Mensajes {
 	private Usuario duenyoMensaje;

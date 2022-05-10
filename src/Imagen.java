@@ -1,4 +1,14 @@
 
+/**
+* Clase Imagen
+* Clase creada para poder usar imagenes
+* @author Eva Lemmon Lopez y Adrian Cortes
+* @version 0.0.1
+* @param  ruta Guarda la ruta en disco de la imagen.
+* @param  tamaño Tamaño de la imagen.
+* @see Mensajes
+*/
+
 public class Imagen extends Mensajes{
 	private String ruta;
 	private int tamaño;
