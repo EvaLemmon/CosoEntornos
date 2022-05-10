@@ -18,6 +18,8 @@ public class Principal {
 		Usuario user2 = new Usuario("123456788");
 		
 		ArrayList<Usuario> loListaUsuarios = new ArrayList<Usuario>();
+		loListaUsuarios.add(user1);
+		loListaUsuarios.add(user2);
 		
 		Aplicacion aplicacion = new Aplicacion(loListaUsuarios);
 		

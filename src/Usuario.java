@@ -92,71 +92,93 @@ public class Usuario {
 	public void pvEnviarMensaje(Aplicacion oAplicacion)
 	{
 		int iOpcion = 0;
-		boolean bSalir = false;
-		boolean bCoincide = false;
+		boolean bSalir;
+		boolean bCoincide;
 	
 		Usuario oDestinatario = null;
 		String szTelefono;
 		
+		bSalir = false;
 		while(!bSalir)
 		{
-			System.out.println("A quíen quiere inviar un mensaje (teléfono)");
+			System.out.print("A quíen quiere inviar un mensaje (teléfono): ");
 			szTelefono = sc.nextLine();
-
-			for(int iCont = 0; iCont < oAplicacion.getLoUsuarios().size(); iCont++)
+			System.out.println();
+				
+			if(szTelefono.equals(szNumTelefono))
 			{
-				if(oAplicacion.getLoUsuarios().get(iCont).getSzNumTelefono().equals(szTelefono))
-				{
-					oDestinatario = oAplicacion.getLoUsuarios().get(iCont);
-					bCoincide = true;
-				}
-			}
-			if(bCoincide = false)
-			{
-				System.out.println("Usuario no encontrado");
+				System.out.println("No puedes enviarte un mensaje a ti mismo");
+				System.out.println();
 				bSalir = true;
 			}
 			else
 			{
-				while(iOpcion < 1 || 2 < iOpcion)
+				
+				bCoincide = false;;
+				for(int iCont = 0; iCont < oAplicacion.getLoUsuarios().size(); iCont++)
 				{
-
-					System.out.println("¿Qué tipo de mensaje quieres enviar (1: Mensaje de texto. 2: Imagen)?");
-					iOpcion = sc.nextInt();
-					sc.nextLine();
-					
-					if(iOpcion == 1)			
+					if(oAplicacion.getLoUsuarios().get(iCont).getSzNumTelefono().equals(szTelefono))
 					{
-						System.out.println("Mensaje: ");
-						String szMensaje = sc.nextLine();
-					
-						Texto oTexto = new Texto(this, oDestinatario, szMensaje);
-						
-						loMensajesEnviados.add(oTexto); 
-						loDestinatarioMensajes.add(oDestinatario);
-						
-						oDestinatario.getLoMensajesRecibidos().add(oTexto);
-						oDestinatario.getLoRemitenteMensajes().add(this);
-						
-					} 
-					else if(iOpcion == 2)			
-					{
-						System.out.println("Ruta Imagen: ");
-						String szRuta = sc.nextLine();
-					
-						int iTamanyo = (int) (rnd.nextDouble() * 5000);
-						
-						Imagen oImagen = new Imagen(this, oDestinatario, szRuta, iTamanyo);
-						
-						loMensajesEnviados.add(oImagen); 
-						loDestinatarioMensajes.add(oDestinatario);
-						
-						oDestinatario.getLoMensajesRecibidos().add(oImagen);
-						oDestinatario.getLoRemitenteMensajes().add(this);
+						oDestinatario = oAplicacion.getLoUsuarios().get(iCont);
+						bCoincide = true;
 					}
-					else
+				}
+				
+				if(bCoincide == false)
+				{
+					System.out.println("Usuario no encontrado");
+					bSalir = true;
+				}
+				else
+				{
+					while(iOpcion < 1 || 2 < iOpcion)
 					{
-						System.out.println("Elige una opción válida");
+	
+						System.out.print("¿Qué tipo de mensaje quieres enviar (1: Mensaje de texto. 2: Imagen)?: ");
+						iOpcion = sc.nextInt();
+						sc.nextLine();
+						System.out.println();
+						
+						if(iOpcion == 1)			
+						{
+							System.out.print("Mensaje: ");
+							String szMensaje = sc.nextLine();
+							System.out.println();
+						
+							Texto oTexto = new Texto(this, oDestinatario, szMensaje);
+							
+							loMensajesEnviados.add(oTexto); 
+							loDestinatarioMensajes.add(oDestinatario);
+							
+							oDestinatario.getLoMensajesRecibidos().add(oTexto);
+							oDestinatario.getLoRemitenteMensajes().add(this);
+							
+							System.out.println("Mensaje Enviado");
+							bSalir = true;			
+						} 
+						else if(iOpcion == 2)			
+						{
+							System.out.print("Ruta Imagen: ");
+							String szRuta = sc.nextLine();
+							System.out.println();
+						
+							int iTamanyo = (int) (rnd.nextDouble() * 5000);
+							
+							Imagen oImagen = new Imagen(this, oDestinatario, szRuta, iTamanyo);
+							
+							loMensajesEnviados.add(oImagen); 
+							loDestinatarioMensajes.add(oDestinatario);
+							
+							oDestinatario.getLoMensajesRecibidos().add(oImagen);
+							oDestinatario.getLoRemitenteMensajes().add(this);
+							
+							System.out.println("Mensaje Enviado");
+							bSalir = true;
+						}
+						else
+						{
+							System.out.println("Elige una opción válida");
+						}
 					}
 				}
 			}
