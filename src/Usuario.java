@@ -102,7 +102,8 @@ public class Usuario {
 		{
 			System.out.println("A quíen quiere inviar un mensaje (teléfono)");
 			szTelefono = sc.nextLine();
-			
+			String szDestinatario = sc.nextLine();
+
 			for(int iCont = 0; iCont < oAplicacion.getLoUsuarios().size(); iCont++)
 			{
 				if(oAplicacion.getLoUsuarios().get(iCont).getSzNumTelefono().equals(szTelefono))
