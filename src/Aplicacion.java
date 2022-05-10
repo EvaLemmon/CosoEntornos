@@ -5,9 +5,9 @@ public class Aplicacion {
 	//Atributos
 	ArrayList<Usuario> loUsuarios;
 	
-	public Aplicacion()
+	public Aplicacion(ArrayList<Usuario> loUsuarios)
 	{
-		loUsuarios = new ArrayList<Usuario>();
+		this.loUsuarios = loUsuarios;
 	}
 
 	public ArrayList<Usuario> getLoUsuarios() {
