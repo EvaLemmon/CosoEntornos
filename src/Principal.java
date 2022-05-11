@@ -14,8 +14,9 @@ public class Principal {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		Usuario user1 = new Usuario("123456789");
-		Usuario user2 = new Usuario("123456788");
+		NormalUser user1 = new NormalUser("123456789");
+		NormalUser user2 = new NormalUser("123456788");
+		Admin admin = new Admin("000000001");
 		
 		ArrayList<Usuario> loListaUsuarios = new ArrayList<Usuario>();
 		loListaUsuarios.add(user1);
@@ -23,12 +24,15 @@ public class Principal {
 		
 		Aplicacion aplicacion = new Aplicacion(loListaUsuarios);
 		
+		admin.pvVerMensajesDeUsuario(aplicacion);
 		user1.pvEnviarMensaje(aplicacion);
 		user1.pvEnviarMensaje(aplicacion);
 		user1.pvEnviarMensaje(aplicacion);
 		
 		user2.pvVerMensajesRecibidos();
 		user1.pvVerMensajesEnviados();
+		
+		admin.pvVerMensajesDeUsuario(aplicacion);
 	}
 
 }

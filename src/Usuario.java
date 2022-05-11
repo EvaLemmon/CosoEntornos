@@ -11,7 +11,7 @@ import java.util.Random;
 * @see Mensaje
 */
 
-public class Usuario {
+public abstract class Usuario {
 
 	Scanner sc = new Scanner(System.in);
 	Random rnd = new Random();
@@ -101,7 +101,7 @@ public class Usuario {
 		bSalir = false;
 		while(!bSalir)
 		{
-			System.out.print("A quíen quiere inviar un mensaje (teléfono): ");
+			System.out.print("A quíen quiere enviar un mensaje (teléfono): ");
 			szTelefono = sc.nextLine();
 			System.out.println();
 				
@@ -154,6 +154,7 @@ public class Usuario {
 							oDestinatario.getLoRemitenteMensajes().add(this);
 							
 							System.out.println("Mensaje Enviado");
+							System.out.println();
 							bSalir = true;			
 						} 
 						else if(iOpcion == 2)			
@@ -173,6 +174,7 @@ public class Usuario {
 							oDestinatario.getLoRemitenteMensajes().add(this);
 							
 							System.out.println("Mensaje Enviado");
+							System.out.println();
 							bSalir = true;
 						}
 						else

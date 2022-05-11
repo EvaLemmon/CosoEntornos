@@ -9,7 +9,7 @@
 * @see Usuario
 */
 
-public class Mensaje 
+public abstract class Mensaje 
 {
 	private Usuario duenyoMensaje;
 	private Usuario destinatarioMensaje;
