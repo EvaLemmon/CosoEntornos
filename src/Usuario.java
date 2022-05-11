@@ -127,6 +127,7 @@ public abstract class Usuario {
 				if(bCoincide == false)
 				{
 					System.out.println("Usuario no encontrado");
+					System.out.println();
 					bSalir = true;
 				}
 				else
@@ -189,50 +190,66 @@ public abstract class Usuario {
 	
 	public void pvVerMensajesRecibidos()
 	{
-		for(int iCont = 0; iCont < loMensajesRecibidos.size(); iCont++)
+		if(loMensajesRecibidos.size() == 0)
 		{
-			if(loMensajesRecibidos.get(iCont) instanceof Texto)
+			System.out.println("No has recibido ningún mensaje");
+			System.out.println();
+		}
+		else
+		{
+			for(int iCont = 0; iCont < loMensajesRecibidos.size(); iCont++)
 			{
-				Mensaje Aux = loMensajesRecibidos.get(iCont);
-				Texto Aux2  = (Texto)Aux;
-				
-				System.out.println("Mensaje " + (iCont+1) + ", De " + Aux2.getDuenyoMensaje().getSzNumTelefono() + ":");
-				System.out.println(Aux2.getTexto());
-				System.out.println();;
-			}
-			else
-			{
-				Mensaje Aux = loMensajesRecibidos.get(iCont);
-				Imagen Aux2  = (Imagen)Aux;
-				
-				System.out.println("Mensaje " + (iCont+1) + ", De " + Aux2.getDuenyoMensaje().getSzNumTelefono() + ":");
-				System.out.println("Imagen: " + Aux2.getRuta());
-				System.out.println();
+				if(loMensajesRecibidos.get(iCont) instanceof Texto)
+				{
+					Mensaje Aux = loMensajesRecibidos.get(iCont);
+					Texto Aux2  = (Texto)Aux;
+					
+					System.out.println("Mensaje " + (iCont+1) + ", De " + Aux2.getDuenyoMensaje().getSzNumTelefono() + ":");
+					System.out.println(Aux2.getTexto());
+					System.out.println();;
+				}
+				else
+				{
+					Mensaje Aux = loMensajesRecibidos.get(iCont);
+					Imagen Aux2  = (Imagen)Aux;
+					
+					System.out.println("Mensaje " + (iCont+1) + ", De " + Aux2.getDuenyoMensaje().getSzNumTelefono() + ":");
+					System.out.println("Imagen: " + Aux2.getRuta());
+					System.out.println();
+				}
 			}
 		}
 	}
 	
 	public void pvVerMensajesEnviados()
 	{
-		for(int iCont = 0; iCont < loMensajesEnviados.size(); iCont++)
+		if(loMensajesEnviados.size() == 0)
 		{
-			if(loMensajesEnviados.get(iCont) instanceof Texto)
+			System.out.println("No has enviado ningún mensaje");
+			System.out.println();
+		}
+		else
+		{		
+			for(int iCont = 0; iCont < loMensajesEnviados.size(); iCont++)
 			{
-				Mensaje Aux = loMensajesEnviados.get(iCont);
-				Texto Aux2  = (Texto)Aux;
-				
-				System.out.println("Mensaje " + (iCont+1) + ", Enviado a " + Aux2.getDestinatarioMensaje().getSzNumTelefono() + ":");
-				System.out.println(Aux2.getTexto());
-				System.out.println();
-			}
-			else
-			{
-				Mensaje Aux = loMensajesEnviados.get(iCont);
-				Imagen Aux2  = (Imagen)Aux;
-				
-				System.out.println("Mensaje " + (iCont+1) + ", Enviado a " + Aux2.getDestinatarioMensaje().getSzNumTelefono() + ":");
-				System.out.println("Imagen: " + Aux2.getRuta());
-				System.out.println();
+				if(loMensajesEnviados.get(iCont) instanceof Texto)
+				{
+					Mensaje Aux = loMensajesEnviados.get(iCont);
+					Texto Aux2  = (Texto)Aux;
+					
+					System.out.println("Mensaje " + (iCont+1) + ", Enviado a " + Aux2.getDestinatarioMensaje().getSzNumTelefono() + ":");
+					System.out.println(Aux2.getTexto());
+					System.out.println();
+				}
+				else
+				{
+					Mensaje Aux = loMensajesEnviados.get(iCont);
+					Imagen Aux2  = (Imagen)Aux;
+					
+					System.out.println("Mensaje " + (iCont+1) + ", Enviado a " + Aux2.getDestinatarioMensaje().getSzNumTelefono() + ":");
+					System.out.println("Imagen: " + Aux2.getRuta());
+					System.out.println();
+				}
 			}
 		}
 	}

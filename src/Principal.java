@@ -67,8 +67,8 @@ public class Principal {
 				System.out.println("1. Enviar un mensaje.");
 				System.out.println("2. Ver mensajes enviados");
 				System.out.println("3. Ver todos los mensajes recibidos");
-				System.out.println("4. Ver mensajes recibidos de un numero especifico");
-				System.out.println("5. Ver mensajes recibidos de otro numero (ADMIN)");
+				System.out.println("4. Ver mensajes recibidos de un número especifico");
+				System.out.println("5. Ver mensajes enviados/recibidos de otro número (ADMIN)");
 				System.out.println("6. Salir de la aplicación");
 				System.out.println();
 				System.out.print("Elige la opción deseada (1-6): ");
@@ -114,7 +114,7 @@ public class Principal {
 				System.out.println("1. Enviar un mensaje.");
 				System.out.println("2. Ver mensajes enviados");
 				System.out.println("3. Ver todos los mensajes recibidos");
-				System.out.println("4. Ver mensajes recibidos de un numero especifico");
+				System.out.println("4. Ver mensajes recibidos de un número especifico");
 				System.out.println("5. Salir de la aplicación");
 				System.out.println();
 				System.out.print("Elige la opción deseada (1-5): ");

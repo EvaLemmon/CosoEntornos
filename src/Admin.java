@@ -51,7 +51,7 @@ public class Admin extends Usuario
 					{
 						if(oUsuario.loMensajesEnviados.size() == 0)
 						{
-							System.out.println("El ususario" + oUsuario.szNumTelefono + "no ha enviado ningún mensaje");
+							System.out.println("El ususario " + oUsuario.szNumTelefono + " no ha enviado ningún mensaje");
 						}
 						else
 						{
