@@ -5,10 +5,10 @@
 * @author Eva Lemmon Lopez y Adrian Cortes
 * @version 0.0.1
 * @param  texto Informacion del texto.
-* @see Mensajes
+* @see Mensaje
 */
 
-public class Texto extends Mensajes
+public class Texto extends Mensaje
 {
 
 	private String texto;

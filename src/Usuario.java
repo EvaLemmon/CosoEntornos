@@ -8,7 +8,7 @@ import java.util.Random;
 * @author Eva Lemmon Lopez y Adrian Cortes
 * @version 0.0.1
 * @param  szNumTelefono
-* @see Mensajes
+* @see Mensaje
 */
 
 public class Usuario {
@@ -19,10 +19,10 @@ public class Usuario {
 	//Atributos
 	String szNumTelefono;
 
-	ArrayList<Mensajes> loMensajesRecibidos;
+	ArrayList<Mensaje> loMensajesRecibidos;
 	ArrayList<Usuario> loRemitenteMensajes;
 	
-	ArrayList<Mensajes> loMensajesEnviados;
+	ArrayList<Mensaje> loMensajesEnviados;
 	ArrayList<Usuario> loDestinatarioMensajes;
 	
 	ArrayList<Usuario> loContactos;
@@ -32,9 +32,9 @@ public class Usuario {
 	{
 		this.szNumTelefono = szNumTelefono;
 		
-		loMensajesRecibidos = new ArrayList<Mensajes>();
+		loMensajesRecibidos = new ArrayList<Mensaje>();
 		loRemitenteMensajes = new ArrayList<Usuario>();
-		loMensajesEnviados = new ArrayList<Mensajes>();
+		loMensajesEnviados = new ArrayList<Mensaje>();
 		loDestinatarioMensajes = new ArrayList<Usuario>();
 		loContactos = new ArrayList<Usuario>();
 	}
@@ -48,11 +48,11 @@ public class Usuario {
 		this.szNumTelefono = szNumTelefono;
 	}
 
-	public ArrayList<Mensajes> getLoMensajesRecibidos() {
+	public ArrayList<Mensaje> getLoMensajesRecibidos() {
 		return loMensajesRecibidos;
 	}
 
-	public void setLoMensajesRecibidos(ArrayList<Mensajes> loMensajesRecibidos) {
+	public void setLoMensajesRecibidos(ArrayList<Mensaje> loMensajesRecibidos) {
 		this.loMensajesRecibidos = loMensajesRecibidos;
 	}
 
@@ -64,11 +64,11 @@ public class Usuario {
 		this.loRemitenteMensajes = lszRemitenteMensajes;
 	}
 
-	public ArrayList<Mensajes> getLoMensajesEnviados() {
+	public ArrayList<Mensaje> getLoMensajesEnviados() {
 		return loMensajesEnviados;
 	}
 
-	public void setLoMensajesEnviados(ArrayList<Mensajes> loMensajesEnviados) {
+	public void setLoMensajesEnviados(ArrayList<Mensaje> loMensajesEnviados) {
 		this.loMensajesEnviados = loMensajesEnviados;
 	}
 
@@ -191,7 +191,7 @@ public class Usuario {
 		{
 			if(loMensajesRecibidos.get(iCont) instanceof Texto)
 			{
-				Mensajes Aux = loMensajesRecibidos.get(iCont);
+				Mensaje Aux = loMensajesRecibidos.get(iCont);
 				Texto Aux2  = (Texto)Aux;
 				
 				System.out.println("Mensaje " + (iCont+1) + ", De " + Aux2.getDuenyoMensaje().getSzNumTelefono() + ":");
@@ -200,7 +200,7 @@ public class Usuario {
 			}
 			else
 			{
-				Mensajes Aux = loMensajesRecibidos.get(iCont);
+				Mensaje Aux = loMensajesRecibidos.get(iCont);
 				Imagen Aux2  = (Imagen)Aux;
 				
 				System.out.println("Mensaje " + (iCont+1) + ", De " + Aux2.getDuenyoMensaje().getSzNumTelefono() + ":");
@@ -216,7 +216,7 @@ public class Usuario {
 		{
 			if(loMensajesEnviados.get(iCont) instanceof Texto)
 			{
-				Mensajes Aux = loMensajesEnviados.get(iCont);
+				Mensaje Aux = loMensajesEnviados.get(iCont);
 				Texto Aux2  = (Texto)Aux;
 				
 				System.out.println("Mensaje " + (iCont+1) + ", Enviado a " + Aux2.getDestinatarioMensaje().getSzNumTelefono() + ":");
@@ -225,7 +225,7 @@ public class Usuario {
 			}
 			else
 			{
-				Mensajes Aux = loMensajesEnviados.get(iCont);
+				Mensaje Aux = loMensajesEnviados.get(iCont);
 				Imagen Aux2  = (Imagen)Aux;
 				
 				System.out.println("Mensaje " + (iCont+1) + ", Enviado a " + Aux2.getDestinatarioMensaje().getSzNumTelefono() + ":");

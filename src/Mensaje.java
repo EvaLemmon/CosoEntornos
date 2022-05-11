@@ -9,12 +9,12 @@
 * @see Usuario
 */
 
-public class Mensajes 
+public class Mensaje 
 {
 	private Usuario duenyoMensaje;
 	private Usuario destinatarioMensaje;
 	
-	public Mensajes(Usuario duenyoMensaje, Usuario destinatarioMensaje) 
+	public Mensaje(Usuario duenyoMensaje, Usuario destinatarioMensaje) 
 	{
 		this.duenyoMensaje = duenyoMensaje;
 		this.destinatarioMensaje = destinatarioMensaje;

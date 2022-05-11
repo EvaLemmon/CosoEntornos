@@ -6,10 +6,10 @@
 * @version 0.0.1
 * @param  ruta Guarda la ruta en disco de la imagen.
 * @param  tamaño Tamaño de la imagen.
-* @see Mensajes
+* @see Mensaje
 */
 
-public class Imagen extends Mensajes{
+public class Imagen extends Mensaje{
 	private String ruta;
 	private int tamaño;
 	
