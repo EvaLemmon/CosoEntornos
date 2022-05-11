@@ -221,6 +221,51 @@ public abstract class Usuario {
 		}
 	}
 	
+	public void pvVerMensajesRecibidosDeUsusarioEspecifico()
+	{
+		String szTelefonoBuscado;
+		
+		if(loMensajesRecibidos.size() == 0)
+		{
+			System.out.println("No has recibido ningún mensaje");
+			System.out.println();
+		}
+		else
+		{
+			System.out.print("¿De que usuario quieres ver los mensajes recibidos (teléfono)?: ");
+			szTelefonoBuscado = sc.nextLine();
+			System.out.println();
+			
+			for(int iCont = 0; iCont < loMensajesRecibidos.size(); iCont++)
+			{
+				if(loMensajesRecibidos.get(iCont) instanceof Texto)
+				{
+					if(loMensajesRecibidos.get(iCont).getDuenyoMensaje().getSzNumTelefono().equals(szTelefonoBuscado))
+					{				
+						Mensaje Aux = loMensajesRecibidos.get(iCont);
+						Texto Aux2  = (Texto)Aux;
+						
+						System.out.println("Mensaje " + (iCont+1) + ", De " + Aux2.getDuenyoMensaje().getSzNumTelefono() + ":");
+						System.out.println(Aux2.getTexto());
+						System.out.println();
+					}
+				}
+				else         //HACER QUE DIGA ALGO SI NO HAY NINGUNO
+				{
+					if(loMensajesRecibidos.get(iCont).getDuenyoMensaje().getSzNumTelefono().equals(szTelefonoBuscado))
+					{	
+						Mensaje Aux = loMensajesRecibidos.get(iCont);
+						Imagen Aux2  = (Imagen)Aux;
+						
+						System.out.println("Mensaje " + (iCont+1) + ", De " + Aux2.getDuenyoMensaje().getSzNumTelefono() + ":");
+						System.out.println("Imagen: " + Aux2.getRuta());
+						System.out.println();
+					}
+				}
+			}
+		}
+	}
+	
 	public void pvVerMensajesEnviados()
 	{
 		if(loMensajesEnviados.size() == 0)
