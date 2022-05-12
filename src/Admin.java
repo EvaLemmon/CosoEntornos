@@ -51,7 +51,7 @@ public class Admin extends Usuario
 					{
 						if(oUsuario.loMensajesEnviados.size() == 0)
 						{
-							System.out.println("El ususario " + oUsuario.szNumTelefono + " no ha enviado ningún mensaje");
+							System.out.println("El usuario " + oUsuario.szNombre + "(" + oUsuario.szNumTelefono + ") no ha enviado ningún mensaje");
 						}
 						else
 						{
@@ -63,7 +63,7 @@ public class Admin extends Usuario
 					{
 						if(oUsuario.loMensajesRecibidos.size() == 0)
 						{
-							System.out.println("El ususario " + oUsuario.szNumTelefono + " no ha recibido ningún mensaje");
+							System.out.println("El usuario " + oUsuario.szNombre + "(" + oUsuario.szNumTelefono + ") no ha recibido ningún mensaje");
 						}
 						else
 						{

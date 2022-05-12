@@ -33,7 +33,7 @@ public class Principal {
 		String szTelefonoUsuario;
 		Usuario oUsuarioActual = null;
 		
-		user1.pvEnviarMensaje(oAplicacion);
+		user1.setSzNombre("Pedro");;
 		
 		bSalir = false;
 		while(!bSalir)
@@ -93,7 +93,7 @@ public class Principal {
 						break;
 						
 					case 4:
-						oUsuarioActual.pvVerMensajesRecibidosDeUsusarioEspecifico();
+						oUsuarioActual.pvVerMensajesRecibidosDeUsuarioEspecifico();
 						break;
 						
 					case 5:
@@ -144,7 +144,7 @@ public class Principal {
 						break;
 						
 					case 4:
-						oUsuarioActual.pvVerMensajesRecibidosDeUsusarioEspecifico();
+						oUsuarioActual.pvVerMensajesRecibidosDeUsuarioEspecifico();
 						break;
 						
 					case 5:

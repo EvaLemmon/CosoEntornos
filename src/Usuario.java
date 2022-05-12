@@ -31,6 +31,7 @@ public abstract class Usuario {
 	//Constructor
 	public Usuario(String szNumTelefono)
 	{
+		this.szNombre = "";
 		this.szNumTelefono = szNumTelefono;
 		
 		loMensajesRecibidos = new ArrayList<Mensaje>();
@@ -123,7 +124,7 @@ public abstract class Usuario {
 			else
 			{
 				
-				bCoincide = false;;
+				bCoincide = false;
 				for(int iCont = 0; iCont < oAplicacion.getLoUsuarios().size(); iCont++)
 				{
 					if(oAplicacion.getLoUsuarios().get(iCont).getSzNumTelefono().equals(szTelefono))
@@ -190,6 +191,7 @@ public abstract class Usuario {
 						else
 						{
 							System.out.println("Elige una opción válida");
+							System.out.println();
 						}
 					}
 				}
@@ -213,7 +215,7 @@ public abstract class Usuario {
 					Mensaje Aux = loMensajesRecibidos.get(iCont);
 					Texto Aux2  = (Texto)Aux;
 					
-					System.out.println("Mensaje " + (iCont+1) + ", De " + Aux2.getDuenyoMensaje().getSzNumTelefono() + ":");
+					System.out.println("Mensaje " + (iCont+1) + ", De " + Aux2.getDuenyoMensaje().getSzNombre() + "(" + Aux2.getDuenyoMensaje().getSzNumTelefono() + "):");
 					System.out.println(Aux2.getTexto());
 					System.out.println();;
 				}
@@ -222,7 +224,7 @@ public abstract class Usuario {
 					Mensaje Aux = loMensajesRecibidos.get(iCont);
 					Imagen Aux2  = (Imagen)Aux;
 					
-					System.out.println("Mensaje " + (iCont+1) + ", De " + Aux2.getDuenyoMensaje().getSzNumTelefono() + ":");
+					System.out.println("Mensaje " + (iCont+1) + ", De " + Aux2.getDuenyoMensaje().getSzNombre() + "(" + Aux2.getDuenyoMensaje().getSzNumTelefono() + "):");
 					System.out.println("Imagen: " + Aux2.getRuta());
 					System.out.println();
 				}
@@ -230,7 +232,7 @@ public abstract class Usuario {
 		}
 	}
 	
-	public void pvVerMensajesRecibidosDeUsusarioEspecifico()
+	public void pvVerMensajesRecibidosDeUsuarioEspecifico()
 	{
 		String szTelefonoBuscado;
 		
@@ -256,7 +258,7 @@ public abstract class Usuario {
 						Mensaje Aux = loMensajesRecibidos.get(iCont);
 						Texto Aux2  = (Texto)Aux;
 							
-						System.out.println("Mensaje " + (iContadorMensajes+1) + ", De " + Aux2.getDuenyoMensaje().getSzNumTelefono() + ":");
+						System.out.println("Mensaje " + (iContadorMensajes+1) + ", De " + Aux2.getDuenyoMensaje().getSzNombre() + "(" + Aux2.getDuenyoMensaje().getSzNumTelefono() + "):");
 						System.out.println(Aux2.getTexto());
 						System.out.println();
 						iContadorMensajes++;
@@ -267,7 +269,7 @@ public abstract class Usuario {
 						Mensaje Aux = loMensajesRecibidos.get(iCont);
 						Imagen Aux2  = (Imagen)Aux;
 							
-						System.out.println("Mensaje " + (iContadorMensajes+1) + ", De " + Aux2.getDuenyoMensaje().getSzNumTelefono() + ":");
+						System.out.println("Mensaje " + (iContadorMensajes+1) + ", De " + Aux2.getDuenyoMensaje().getSzNombre() + "(" + Aux2.getDuenyoMensaje().getSzNumTelefono() + "):");
 						System.out.println("Imagen: " + Aux2.getRuta());
 						System.out.println();
 						iContadorMensajes++;
@@ -277,7 +279,7 @@ public abstract class Usuario {
 			
 			if(iContadorMensajes == 0)
 			{
-				System.out.println("No tienes mensajes del ususario " + szTelefonoBuscado);
+				System.out.println("No tienes mensajes del usuario " + szTelefonoBuscado);
 				System.out.println();
 			}
 		}
@@ -299,7 +301,7 @@ public abstract class Usuario {
 					Mensaje Aux = loMensajesEnviados.get(iCont);
 					Texto Aux2  = (Texto)Aux;
 					
-					System.out.println("Mensaje " + (iCont+1) + ", Enviado a " + Aux2.getDestinatarioMensaje().getSzNumTelefono() + ":");
+					System.out.println("Mensaje " + (iCont+1) + ", Enviado a " + Aux.getDestinatarioMensaje().getSzNombre() + "(" + Aux2.getDestinatarioMensaje().getSzNumTelefono() + "):");
 					System.out.println(Aux2.getTexto());
 					System.out.println();
 				}
@@ -308,7 +310,7 @@ public abstract class Usuario {
 					Mensaje Aux = loMensajesEnviados.get(iCont);
 					Imagen Aux2  = (Imagen)Aux;
 					
-					System.out.println("Mensaje " + (iCont+1) + ", Enviado a " + Aux2.getDestinatarioMensaje().getSzNumTelefono() + ":");
+					System.out.println("Mensaje " + (iCont+1) + ", Enviado a " + Aux2.getDestinatarioMensaje().getSzNombre() + "(" + Aux2.getDestinatarioMensaje().getSzNumTelefono() + "):");
 					System.out.println("Imagen: " + Aux2.getRuta());
 					System.out.println();
 				}
