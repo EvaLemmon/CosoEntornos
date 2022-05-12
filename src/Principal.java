@@ -71,9 +71,10 @@ public class Principal {
 				System.out.println("3. Ver todos los mensajes recibidos");
 				System.out.println("4. Ver mensajes recibidos de un número especifico");
 				System.out.println("5. Ver mensajes enviados/recibidos de otro número (ADMIN)");
-				System.out.println("6. Salir de la aplicación");
+				System.out.println("6. Cambiar nombre de usuario");
+				System.out.println("7. Salir de la aplicación");
 				System.out.println();
-				System.out.print("Elige la opción deseada (1-6): ");
+				System.out.print("Elige la opción deseada (1-7): ");
 				iInput = sc.nextInt();
 				sc.nextLine();
 				System.out.println();
@@ -102,6 +103,12 @@ public class Principal {
 						break;
 						
 					case 6:
+						System.out.print("Nuevo nombre de usuario: ");						
+						oUsuarioActual.setSzNombre(sc.nextLine());
+						System.out.println();
+						break;
+						
+					case 7:
 						bSalir = true;
 						break;
 						
@@ -122,9 +129,10 @@ public class Principal {
 				System.out.println("2. Ver mensajes enviados");
 				System.out.println("3. Ver todos los mensajes recibidos");
 				System.out.println("4. Ver mensajes recibidos de un número especifico");
-				System.out.println("5. Salir de la aplicación");
+				System.out.println("5. Cambiar nombre de usuario");
+				System.out.println("6. Salir de la aplicación");
 				System.out.println();
-				System.out.print("Elige la opción deseada (1-5): ");
+				System.out.print("Elige la opción deseada (1-6): ");
 				iInput = sc.nextInt();
 				sc.nextLine();
 				System.out.println();
@@ -148,6 +156,12 @@ public class Principal {
 						break;
 						
 					case 5:
+						System.out.print("Nuevo nombre de usuario: ");						
+						oUsuarioActual.setSzNombre(sc.nextLine());
+						System.out.println();
+						break;
+						
+					case 6:
 						bSalir = true;
 						break;
 						
@@ -157,6 +171,7 @@ public class Principal {
 						break;
 				}
 			}
-		}
+		}		
+		sc.close();
 	}
 }
