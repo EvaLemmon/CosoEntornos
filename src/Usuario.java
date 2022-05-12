@@ -17,6 +17,7 @@ public abstract class Usuario {
 	Random rnd = new Random();
 
 	//Atributos
+	String szNombre;
 	String szNumTelefono;
 
 	ArrayList<Mensaje> loMensajesRecibidos;
@@ -40,6 +41,14 @@ public abstract class Usuario {
 	}
 	
 	//Getters y Setters
+	public String getSzNombre() {
+		return szNombre;
+	}
+	
+	public void setSzNombre(String szNombre) {
+		this.szNombre = szNombre;
+	}
+	
 	public String getSzNumTelefono() {
 		return szNumTelefono;
 	}
@@ -236,32 +245,40 @@ public abstract class Usuario {
 			szTelefonoBuscado = sc.nextLine();
 			System.out.println();
 			
+			int iContadorMensajes = 0; 
 			for(int iCont = 0; iCont < loMensajesRecibidos.size(); iCont++)
 			{
-				if(loMensajesRecibidos.get(iCont) instanceof Texto)
+				if(loMensajesRecibidos.get(iCont).getDuenyoMensaje().getSzNumTelefono().equals(szTelefonoBuscado))
 				{
-					if(loMensajesRecibidos.get(iCont).getDuenyoMensaje().getSzNumTelefono().equals(szTelefonoBuscado))
-					{				
+					if(loMensajesRecibidos.get(iCont) instanceof Texto)
+					{
+				
 						Mensaje Aux = loMensajesRecibidos.get(iCont);
 						Texto Aux2  = (Texto)Aux;
-						
-						System.out.println("Mensaje " + (iCont+1) + ", De " + Aux2.getDuenyoMensaje().getSzNumTelefono() + ":");
+							
+						System.out.println("Mensaje " + (iContadorMensajes+1) + ", De " + Aux2.getDuenyoMensaje().getSzNumTelefono() + ":");
 						System.out.println(Aux2.getTexto());
 						System.out.println();
+						iContadorMensajes++;
 					}
-				}
-				else         //HACER QUE DIGA ALGO SI NO HAY NINGUNO
-				{
-					if(loMensajesRecibidos.get(iCont).getDuenyoMensaje().getSzNumTelefono().equals(szTelefonoBuscado))
-					{	
+					else
+					{
+		
 						Mensaje Aux = loMensajesRecibidos.get(iCont);
 						Imagen Aux2  = (Imagen)Aux;
-						
-						System.out.println("Mensaje " + (iCont+1) + ", De " + Aux2.getDuenyoMensaje().getSzNumTelefono() + ":");
+							
+						System.out.println("Mensaje " + (iContadorMensajes+1) + ", De " + Aux2.getDuenyoMensaje().getSzNumTelefono() + ":");
 						System.out.println("Imagen: " + Aux2.getRuta());
 						System.out.println();
+						iContadorMensajes++;
 					}
 				}
+			}
+			
+			if(iContadorMensajes == 0)
+			{
+				System.out.println("No tienes mensajes del ususario " + szTelefonoBuscado);
+				System.out.println();
 			}
 		}
 	}

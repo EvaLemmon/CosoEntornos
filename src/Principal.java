@@ -33,6 +33,8 @@ public class Principal {
 		String szTelefonoUsuario;
 		Usuario oUsuarioActual = null;
 		
+		user1.pvEnviarMensaje(oAplicacion);
+		
 		bSalir = false;
 		while(!bSalir)
 		{
@@ -91,7 +93,7 @@ public class Principal {
 						break;
 						
 					case 4:
-						//mostrarActivo();
+						oUsuarioActual.pvVerMensajesRecibidosDeUsusarioEspecifico();
 						break;
 						
 					case 5:
@@ -101,6 +103,11 @@ public class Principal {
 						
 					case 6:
 						bSalir = true;
+						break;
+						
+					default:
+						System.out.println("Elige una opción válida");
+						System.out.println();
 						break;
 				}
 			}
@@ -137,11 +144,16 @@ public class Principal {
 						break;
 						
 					case 4:
-						//mostrarActivo();
+						oUsuarioActual.pvVerMensajesRecibidosDeUsusarioEspecifico();
 						break;
 						
 					case 5:
 						bSalir = true;
+						break;
+						
+					default:
+						System.out.println("Elige una opción válida");
+						System.out.println();
 						break;
 				}
 			}
