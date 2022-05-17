@@ -1,13 +1,35 @@
-
+/**
+* Clase Admin
+* Clase para identificar usuarios administradores y su metodo especial
+* @author Eva Lemmon Lopez y Adrian Cortes
+* @version 0.0.1
+* @see Usuario
+*/
 public class Admin extends Usuario
 {
-	public Admin(String szNumTelefono)
+/** 
+ *
+ * Constructor de Admin
+ *
+ * @param szNumTelefono el numero de telefono
+ */
+	public Admin(String szNumTelefono) 
 	{
+
 		super(szNumTelefono);
 	}
 	
-	public void pvVerMensajesDeUsuario(Aplicacion oAplicacion)
+
+
+/** 
+ *
+ * Metodo para ver mensajes de cualquier usuario
+ * Pide el telefono del usuario del que ver los mensajes y muestra todos los mensajes de ese usuario.
+ * @param oAplicacion  la aplicacion
+ */
+	public void pvVerMensajesDeUsuario(Aplicacion oAplicacion) 
 	{
+
 		int iOpcion = 0;
 		boolean bSalir;
 		boolean bCoincide;

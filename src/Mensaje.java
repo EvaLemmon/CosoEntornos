@@ -4,39 +4,88 @@
 * Contiene los parametros para identificar mensajeros
 * @author Eva Lemmon Lopez y Adrian Cortes
 * @version 0.0.1
-* @param  duenyoMensaje Identificacion de quien manda el mensaje.
-* @param  destinatarioMensaje Identificacion de quien recibe el mensaje.
 * @see Usuario
 */
 
 public abstract class Mensaje 
 {
+
+	/**
+	 * duenyoMensaje Identificacion de quien manda el mensaje.
+	 * destinatarioMensaje Identificacion de quien recibe el mensaje.
+	 */
 	private Usuario duenyoMensaje;
 	private Usuario destinatarioMensaje;
 	
-	public Mensaje(Usuario duenyoMensaje, Usuario destinatarioMensaje) 
+
+
+/** 
+ * Constructor del Mensaje
+ *
+ * @param duenyoMensaje el duenyo del mensaje
+ * @param destinatarioMensaje el destinatario del mensaje
+ */
+	public Mensaje(Usuario duenyoMensaje, Usuario destinatarioMensaje)  
 	{
+
 		this.duenyoMensaje = duenyoMensaje;
 		this.destinatarioMensaje = destinatarioMensaje;
 	}
 	
-	public Usuario getDuenyoMensaje()
+
+
+/** 
+ *
+ * Obtiene el duenyo del mensaje
+ *
+ * @return el duenyo del mensaje
+ */
+	public Usuario getDuenyoMensaje() 
 	{
+
 		return duenyoMensaje;
 	}
 
-	public void setDuenyoMensaje(Usuario duenyoMensaje)
+
+
+/** 
+ *
+ * Pone el duenyo del mensaje
+ *
+ * @param duenyoMensaje  el duenyo del mensaje
+ */
+	public void setDuenyoMensaje(Usuario duenyoMensaje) 
 	{
+
 		this.duenyoMensaje = duenyoMensaje;
 	}
 
-	public Usuario getDestinatarioMensaje()
+
+
+/** 
+ *
+ * Obtiene el destinatario del mensaje
+ *
+ * @return el destinatario del mensaje
+ */
+	public Usuario getDestinatarioMensaje() 
 	{
+
 		return destinatarioMensaje;
 	}
 
-	public void setDestinatarioMensaje(Usuario destinatarioMensaje) 
+
+
+/** 
+ *
+ * Pone el destinatario del mensaje
+ *
+ * @param destinatarioMensaje  el destinatario del mensaje
+ */
+	public void setDestinatarioMensaje(Usuario destinatarioMensaje)  
 	{
+
 		this.destinatarioMensaje = destinatarioMensaje;
 	}
 }
+

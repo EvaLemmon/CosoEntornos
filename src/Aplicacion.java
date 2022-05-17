@@ -5,25 +5,52 @@ import java.util.ArrayList;
 * Creada para poner la lista de usuarios
 * @author Eva Lemmon Lopez y Adrian Cortes
 * @version 0.0.1
-* @param  loUsuarios Array List de usuarios
 * @see Usuario
 */
 
 public class Aplicacion {
 
-	//Atributos
+	/**
+	 * loUsuarios Array List de usuarios
+	 */
 	ArrayList<Usuario> loUsuarios;
 	
-	public Aplicacion(ArrayList<Usuario> loUsuarios)
+
+
+/** 
+*
+* Constructor de la aplicacion. 
+*
+* @param loUsuarios La lista de los usuarios
+*/
+	public Aplicacion(ArrayList<Usuario> loUsuarios) 
 	{
+
 		this.loUsuarios = loUsuarios;
 	}
 
-	public ArrayList<Usuario> getLoUsuarios() {
+
+/** 
+*
+* Obtiene los usuarios
+*
+* @return los usuarios
+*/
+	public ArrayList<Usuario> getLoUsuarios() { 
+
 		return loUsuarios;
 	}
 
-	public void setLoUsuarios(ArrayList<Usuario> loUsuarios) {
+
+/** 
+*
+* Pone los usuarios
+*
+* @param loUsuarios los usuarios
+*/
+	public void setLoUsuarios(ArrayList<Usuario> loUsuarios) { 
+
 		this.loUsuarios = loUsuarios;
 	}
 }
+

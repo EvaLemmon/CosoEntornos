@@ -2,20 +2,31 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Random;
 
+
+
 /**
 * Clase Usuario
 * Clase con todos los datos de un usuario.
 * @author Eva Lemmon Lopez y Adrian Cortes
 * @version 0.0.1
-* @param  szNumTelefono
 * @see Mensaje
-*/
+**/ 
 
 public abstract class Usuario {
 
 	Scanner sc = new Scanner(System.in);
 	Random rnd = new Random();
-
+	/**
+	 * szNombre Nombre del usuario
+	 * szNumTelefono Numero del usuario
+	 * loMensajesRecibidos Array para guardar los mensajes recibidos
+	 * loRemitenteMensajes Array para guardar el remitente de esos mensajes
+	 * loContactos Array para guardar mas usuarios
+	 * loMensajesEnviados Array para guardar los mensajes enviados
+	 * loDestinatarioMensajes Array para guardar el destinatario de esos mensajes
+	 * 
+	 * 
+	 */
 	//Atributos
 	String szNombre;
 	String szNumTelefono;
@@ -29,8 +40,18 @@ public abstract class Usuario {
 	ArrayList<Usuario> loContactos;
 	
 	//Constructor
-	public Usuario(String szNumTelefono)
+
+
+/** 
+ *
+ * Constructor de Usuario con el telefono
+ *
+ * @param szNumTelefono  String del numero de telefono
+ */
+	
+	public Usuario(String szNumTelefono) 
 	{
+
 		this.szNombre = "";
 		this.szNumTelefono = szNumTelefono;
 		
@@ -42,65 +63,187 @@ public abstract class Usuario {
 	}
 	
 	//Getters y Setters
-	public String getSzNombre() {
+
+/** 
+ *
+ * Obtiene el nombre
+ *
+ * @return el nombre
+ */
+	public String getSzNombre() { 
+
 		return szNombre;
 	}
 	
-	public void setSzNombre(String szNombre) {
+
+/** 
+ *
+ * Pone el nombre
+ *
+ * @param szNombre  el nombre
+ */
+	public void setSzNombre(String szNombre) { 
+
 		this.szNombre = szNombre;
 	}
 	
-	public String getSzNumTelefono() {
+
+/** 
+ *
+ * Obtiene el numero de telefono
+ *
+ * @return el telefono
+ */
+	public String getSzNumTelefono() { 
+
 		return szNumTelefono;
 	}
 
-	public void setSzNumTelefono(String szNumTelefono) {
+
+/** 
+ *
+ * pone el num telefono
+ *
+ * @param szNumTelefono el telefono
+ */
+	public void setSzNumTelefono(String szNumTelefono) { 
+
 		this.szNumTelefono = szNumTelefono;
 	}
 
-	public ArrayList<Mensaje> getLoMensajesRecibidos() {
+
+/** 
+ *
+ * obtiene los mensajes recibidos
+ *
+ * @return mensajes recibidos
+ */
+	public ArrayList<Mensaje> getLoMensajesRecibidos() { 
+
 		return loMensajesRecibidos;
 	}
 
-	public void setLoMensajesRecibidos(ArrayList<Mensaje> loMensajesRecibidos) {
+
+/** 
+ *
+ * Pone mensajes recibidos
+ *
+ * @param loMensajesRecibidos mensajes recibidos
+ */
+	public void setLoMensajesRecibidos(ArrayList<Mensaje> loMensajesRecibidos) { 
+
 		this.loMensajesRecibidos = loMensajesRecibidos;
 	}
 
-	public ArrayList<Usuario> getLoRemitenteMensajes() {
+
+/** 
+ *
+ * Obtiene el remitente de los mensajes
+ *
+ * @return el remitente de los mensajes
+ */
+	public ArrayList<Usuario> getLoRemitenteMensajes() { 
+
 		return loRemitenteMensajes;
 	}
 
-	public void setLoRemitenteMensajes(ArrayList<Usuario> lszRemitenteMensajes) {
+
+/** 
+ *
+ * Pone el remitente de los mensajes
+ *
+ * @param lszRemitenteMensajes  el remitente de los mensajes
+ */
+	public void setLoRemitenteMensajes(ArrayList<Usuario> lszRemitenteMensajes) { 
+
 		this.loRemitenteMensajes = lszRemitenteMensajes;
 	}
 
-	public ArrayList<Mensaje> getLoMensajesEnviados() {
+
+/** 
+ *
+ * Obtiene los mensajes enviados
+ *
+ * @return mensajes enviados
+ */
+	public ArrayList<Mensaje> getLoMensajesEnviados() { 
+
 		return loMensajesEnviados;
 	}
 
-	public void setLoMensajesEnviados(ArrayList<Mensaje> loMensajesEnviados) {
+
+/** 
+ *
+ * Pone los mensajes enviados
+ *
+ * @param loMensajesEnviados mensajes enviados
+ */
+	public void setLoMensajesEnviados(ArrayList<Mensaje> loMensajesEnviados) { 
+
 		this.loMensajesEnviados = loMensajesEnviados;
 	}
 
-	public ArrayList<Usuario> getLoDestinatarioMensajes() {
+
+/** 
+ *
+ * obtiene el destinatario de los mensajes
+ *
+ * @return el destinatario de los mensajes
+ */
+	public ArrayList<Usuario> getLoDestinatarioMensajes() { 
+
 		return loDestinatarioMensajes;
 	}
 
-	public void setLoDestinatarioMensajes(ArrayList<Usuario> lszDestinatarioMensajes) {
+
+/** 
+ *
+ * Pone el destinatario de los mensajes
+ *
+ * @param lszDestinatarioMensajes  el destinatario de los mensajes
+ */
+	public void setLoDestinatarioMensajes(ArrayList<Usuario> lszDestinatarioMensajes) { 
+
 		this.loDestinatarioMensajes = lszDestinatarioMensajes;
 	}
 
-	public ArrayList<Usuario> getLoContactos() {
+
+/** 
+ *
+ * Obtiene los contactos
+ *
+ * @return los contactos
+ */
+	public ArrayList<Usuario> getLoContactos() { 
+
 		return loContactos;
 	}
 
-	public void setLoContactos(ArrayList<Usuario> loContactos) {
+
+/** 
+ *
+ * Pone los contactos
+ *
+ * @param loContactos  los contactos
+ */
+	public void setLoContactos(ArrayList<Usuario> loContactos) { 
+
 		this.loContactos = loContactos;
 	}
 	
 	//Metodos
-	public void pvEnviarMensaje(Aplicacion oAplicacion)
+
+
+/** 
+ *
+ * Metodo para enviar mensajes
+ *
+ * @param oAplicacion  la aplicacion
+ * Pide un numero de telefono para guardar como destinatario, luego pregunta si es un numero de telefono o una imagen, y pide el texto del mensaje o la ruta de la imagen.
+ */
+	public void pvEnviarMensaje(Aplicacion oAplicacion) 
 	{
+
 		int iOpcion = 0;
 		boolean bSalir;
 		boolean bCoincide;
@@ -199,8 +342,17 @@ public abstract class Usuario {
 		}
 	}	
 	
-	public void pvVerMensajesRecibidos()
+
+
+/** 
+ *
+ * Metodo para ver los mensajes recibidos
+ * Obtiene los mensajes desde un array y los muestra, si hay alguno.
+ *
+ */
+	public void pvVerMensajesRecibidos() 
 	{
+
 		if(loMensajesRecibidos.size() == 0)
 		{
 			System.out.println("No has recibido ningún mensaje");
@@ -232,8 +384,17 @@ public abstract class Usuario {
 		}
 	}
 	
-	public void pvVerMensajesRecibidosDeUsuarioEspecifico()
+
+
+/** 
+ *
+ * Metodo para ver los mensajes recibidos de usuario especifico
+ * Pide un numero de telefono y muestra los mensajes recibidos solo de ese remitente
+ * 
+ */
+	public void pvVerMensajesRecibidosDeUsuarioEspecifico() 
 	{
+
 		String szTelefonoBuscado;
 		
 		if(loMensajesRecibidos.size() == 0)
@@ -285,8 +446,17 @@ public abstract class Usuario {
 		}
 	}
 	
-	public void pvVerMensajesEnviados()
+
+
+/** 
+ *
+ * Metodo para losver mensajes enviados
+ * Llama al array que guarda los mensajes enviados y los muestra
+ *
+ */
+	public void pvVerMensajesEnviados() 
 	{
+
 		if(loMensajesEnviados.size() == 0)
 		{
 			System.out.println("No has enviado ningún mensaje");

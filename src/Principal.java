@@ -5,15 +5,16 @@ import java.util.Scanner;
 * Aqui se encuentra el main y el codigo necesario para ejecutar la aplicacion
 * @author Eva Lemmon Lopez y Adrian Cortes
 * @version 0.0.1
-* @param  loUsuarios Array List de usuarios
 * @see Usuario
 */
 
 public class Principal {
-
+	/**
+	 * El main del programa, aqui esta el menu y todos los usuarios creados.
+	 * 
+	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		//enviar, ver enviados, ver recibidos, ver recibidos de un num especifico, (admin ver mensajes otro numero
+		
 		Scanner sc = new Scanner(System.in);	
 		
 		NormalUser user1 = new NormalUser("123456789");
